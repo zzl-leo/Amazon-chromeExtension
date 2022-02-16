@@ -1,0 +1,65 @@
+{
+  "author": {
+    "email": "1196567505@qq.com",
+    "name": "zzl-leo",
+    "url": "https://zzl-leo.github.io/"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "bulma-fluent": "^0.4.3",
+    "element-ui": "^2.15.6",
+    "md5": "^2.3.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.0.1",
+    "js-cookie": "^2.2.1",
+    "cross-env": "^7.0.3"
+  },
+  "description": "vue-chrome-extension-boilerplate",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.10.4",
+    "archiver": "^4.0.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "style-loader": "^1.2.1",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-extension-reloader": "^1.1.4"
+  },
+  "license": "MIT",
+  "name": "vue-chrome-extension-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubaidr/vue-chrome-extension-boilerplate.git"
+  },
+  "scripts": {
+    "build": "cross-env process.env.NODE_ENV=production npm run pack && npm run remove-evals && npm run zip",
+    "prebuild": "cross-env process.env.PRE_VIEW=production npm run pack && npm run remove-evals && npm run zip",
+    "dev": "cross-env process.env.NODE_ENV=development webpack --mode=development --env.NODE_ENV=development --progress --hide-modules --hot --watch",
+    "lint": "eslint --ext .js,.vue --fix ./src",
+    "pack": "webpack --mode=production --env.NODE_ENV=production --progress --hide-modules",
+    "remove-evals": "node scripts/remove-evals.js",
+    "zip": "node scripts/build-zip.js"
+  },
+  "version": "1.0.1"
+}
